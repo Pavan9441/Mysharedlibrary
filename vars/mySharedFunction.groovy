@@ -1,7 +1,12 @@
 // File: Mysharedlibrary/vars/mySharedFunction.groovy
+
+import groovy.json.JsonSlurper
+
 def call() {
     echo "pipeline step called"
-    def config = readJSON file: "${WORKSPACE}/Mysharedlibrary/resources/cicdConfig.json"
+    def jsonpath = "${WORKSPACE}/Mysharedlibrary/resources/cicdConfig.json"
+    def jsonSlurper = new JsonSlurper()
+    def config = jsonSlurper.parse(new File(jsonpath))
     echo config
     echo "pipeline triggering"
     pipeline {
