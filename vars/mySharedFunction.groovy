@@ -1,31 +1,16 @@
-// File: Mysharedlibrary/vars/mySharedFunction.groovy
+// vars/myCICDSteps.groovy
 
-import groovy.json.JsonSlurper
-
-def call() {
-    echo "pipeline step called"
-    def jsonpath = "${WORKSPACE}/Mysharedlibrary/resources/cicdConfig.json"
-    def jsonSlurper = new JsonSlurper()
-    def config = jsonSlurper.parse(new File(jsonpath))
-    echo config
-    echo "pipeline triggering"
-    pipeline {
-        agent any
-        stages {
-            stage('Build') {
-                steps {
-                    echo "Building.."
-                    // Add your build steps using config properties if needed
-                }
-            }
-            stage('Test') {
-                steps {
-                    echo "Testing.."
-                    // Add your test steps using config properties if needed
-                }
-            }
-            // Add other stages based on your configuration
-        }
+def runCICDSteps() {
+    stage('Build') {
+        echo 'Running build...'
+        // Add your build steps here
+    }
+    stage('Test') {
+        echo 'Running tests...'
+        // Add your test steps here
+    }
+    stage('Deploy') {
+        echo 'Deploying...'
+        // Add your deployment steps here
     }
 }
-
