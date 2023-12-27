@@ -10,6 +10,10 @@ def runCICDSteps() {
         echo 'Running tests...'
         // Add your test steps here
     }
+    stage('Create Package') {
+        echo 'Deploying...'
+        // Add your deployment steps here
+    }
     stage('Deploy') {
         echo 'Deploying...'
         // Add your deployment steps here
