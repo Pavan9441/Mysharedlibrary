@@ -1,0 +1,11 @@
+{
+  "appName": "YourAppName",
+  "version": "1.0",
+  "buildTool": "Maven",
+  "testTool": "JUnit",
+  "sonarqubeAnalysis": true,
+  "packageType": "JAR",
+  "securityScanning": "BlackDuck",
+  "deployTarget": "Production"
+}
+
