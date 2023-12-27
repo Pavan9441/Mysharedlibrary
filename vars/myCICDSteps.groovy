@@ -10,6 +10,10 @@ def runCICDSteps() {
         echo 'Running tests...'
         // Add your test steps here
     }
+    stage('Sonar Analysis') {
+        echo 'Running Sacnning...'
+        // Add your test steps here
+    }
     stage('Create Package') {
         echo 'Deploying...'
         // Add your deployment steps here
@@ -19,4 +23,5 @@ def runCICDSteps() {
         // Add your deployment steps here
     }
     }
+
 }
