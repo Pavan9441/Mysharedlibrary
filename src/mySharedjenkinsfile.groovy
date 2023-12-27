@@ -1,15 +1,12 @@
 // File: Mysharedlibrary/src/mySharedLibrary.groovy
 def call() {
+    echo "pipeline step called"
     def config = readJSON file: "${WORKSPACE}/Mysharedlibrary/resources/cicdConfig.json"
-
+    echo config
+    echo "pipeline triggering"
     pipeline {
         agent any
         stages {
-            stage('Hello') {
-                steps {
-                    mySharedFunction()
-                }
-            }
             stage('Build') {
                 steps {
                     echo "Building.."
