@@ -1,6 +1,7 @@
 // vars/myCICDSteps.groovy
 
 def runCICDSteps() {
+    node {
     stage('Build') {
         echo 'Running build...'
         // Add your build steps here
@@ -12,5 +13,6 @@ def runCICDSteps() {
     stage('Deploy') {
         echo 'Deploying...'
         // Add your deployment steps here
+    }
     }
 }
